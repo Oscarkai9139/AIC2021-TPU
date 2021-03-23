@@ -38,8 +38,9 @@ AIC2021_TPU/
 
 ## Testbench
 ![](./img/testbench.png)
-* At the start of the simulation, tb will load the global buffer A & B, which assume that CPU or DMA has already prepared the data for TPU in global buffer. When signal ```start==1```, the size of the two matrices will be available for TPU (```row_a```, ```col_b```, ```k```).
-* You should implement your own data loader, process elements, and controller which schedule the data in global buffer to be calculated in the systolic array.
+* At the start of the simulation, tb will load the global buffer A & B, which assume that CPU or DMA has already prepared the data for TPU in global buffer. When signal ```start==1```, the size of the two matrices will be available for TPU (```m```, ```n```, ```k```).
+    * ```A(M*K)*B(K*N)```
+* You should implement your own data loader, process elements(PEs), and controller which schedules the data in global buffer A & B to be calculated in the systolic array.
 * Testbench will compare your output global buffer with golden, when you finish the calculation(```done==1```).
 
 **Prerequisite**
@@ -55,7 +56,7 @@ AIC2021_TPU/
     * ```A(4*K)*B(K*4)```, where ```K=9```
 * ```make monster``` (extra)
     * ```A(M*K)*B(K*N)```, where ```K<10```, ```M<10```, ```N<10```
-    * Although our target is ```(4*K)*(K*4)$``` matrix multiplication, when ```M``` & ```N``` is small enough to fit in the input global buffers, give a solution for that size of input matrices. :smile:
+    * Although our target is ```(4*K)*(K*4)``` matrix multiplication, when ```M``` & ```N``` is small enough to fit in the input global buffers, give a solution for that size of input matrices. :smile:
 * ```make clean```
     * This will remove the ```build/``` folder 
 
@@ -87,3 +88,4 @@ build/
     * Support ```(M*K)*(K*N)```
     * or other features
         * please provided you own testbench for the extra features
+
