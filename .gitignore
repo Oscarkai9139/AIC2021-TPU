@@ -1,0 +1,6 @@
+INCA_libs/
+irun*
+ncverilog*
+*.swp
+*.bin
+build/
