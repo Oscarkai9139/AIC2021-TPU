@@ -9,7 +9,11 @@ Design a Tensor Processing Unit(TPU) which has **4x4** Processing elements(PEs) 
 2. Your PEs shouldn't more than **4x4**, where a 2D systolic array architecture is recommended.
 3. An 8-bit data length design.
 4. 3KiBytes in total of global buffer size.
- 
+
+**Project Deadline**
+* Apr 30, 2021, 23:00
+
+
 ![](./img/full_system.png)
 * You should know that in real world, TPU is a Deep Learning Processor(DLP) on the common bus, data is prepared continously by CPU or DMA from DRAM.
 * In this project, you should focus only on the design and dataflow inisde the TPU, instead of full system simulation including CPU, DMA, and DRAM (Make it simple :smile: unless you need more challange).

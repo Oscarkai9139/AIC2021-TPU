@@ -31,8 +31,8 @@ module top_tb;
           .done(done));
 
   initial begin
-    $dumpfile("top.vcd");
-    $dumpvars(0, TOP);
+    $fsdbDumpfile("top.fsdb");
+    $fsdbDumpvars("+struct", "+mda", TOP);
 //----------------------------------------------------------------------------//
 // Global Buffers Initialization                                              //
 //----------------------------------------------------------------------------//
