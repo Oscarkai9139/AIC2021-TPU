@@ -87,9 +87,13 @@ build/
     * **Members' Student ID**
     * TPU achitecture graph
     * Explain your dataflow in TPU
+    * Pls descript as much as you can
     * ...
 * Extra (10%)
     * Support ```(M*K)*(K*N)```
     * or other features
         * please provided you own testbench for the extra features
+    * Good coding style
+    * Plagiarizing(copy-&-paste) others code is probihited
+        * Dont try to do that :smile:, warning from TAs -100%
 
