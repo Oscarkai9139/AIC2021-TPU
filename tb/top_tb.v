@@ -25,12 +25,14 @@ module top_tb;
   top TOP(.clk(clk),
           .rst(rst),
           .start(start),
-          .row_a(row_a),
-          .col_b(col_b),
+          .m(row_a),
           .k(k),
+          .n(col_b),
           .done(done));
 
   initial begin
+    $dumpfile("top.vcd");
+    $dumpvars(0, TOP);
 //----------------------------------------------------------------------------//
 // Global Buffers Initialization                                              //
 //----------------------------------------------------------------------------//
@@ -105,6 +107,7 @@ module top_tb;
 // Maximum Simulation time                                                    //
 //----------------------------------------------------------------------------//
   initial begin
+
     #(`CYCLE*`MAX)
     err = 0;
     for (i = 0; i < `MATRIX_A_ROW; i=i+1) begin
@@ -153,6 +156,10 @@ module top_tb;
     check_err(err);
     $finish;
   end
+
+  
+
+
 
 //----------------------------------------------------------------------------//
 // Task Declarations                                                          //

@@ -9,12 +9,12 @@
 `include "define.v"
 `include "global_buffer.v"
 
-module top(clk, rst, start, row_a, k, col_b, done);
+module top(clk, rst, start, m, n,  k, done);
 
   input clk;
   input rst;
   input start;
-  input [3:0] row_a, k, col_b;
+  input [3:0] m, k, n;
   output reg done;
 
   reg                   wr_en_a,
